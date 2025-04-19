@@ -55,7 +55,7 @@ def exibir_palavra(palavra, palpites, dica):
 
 def verificar_vitoria(palavra, palpites):
     for letra in palavra:
-        if letra not in palpites:
+        if letra != '-' and letra not in palpites:
             return False
     return True
 
