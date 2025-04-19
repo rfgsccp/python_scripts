@@ -96,7 +96,7 @@ def exibir_chutes(lista):
     for chute in lista:
         print(f'{chute}', end = ' ')
 
-lista_palavras = carregar_palavras("jogo_forca/lista.txt")
+lista_palavras = carregar_palavras("./lista.txt")
 dica, palavra_secreta = sortear_palavra(lista_palavras)
 while chances > 0 and not ganhou:
     limpa_tela()
