@@ -44,12 +44,14 @@ def saudacao(asteriscos):
 
 def exibir_palavra(palavra, palpites, dica):
     print()
-    print(f'A dica é:\t{dica}')
+    print(f'A dica é:\t{dica}\n')
     for letra in palavra:
         if letra in palpites or letra == '-':
             print(letra.upper(), end = " ")
         else:
             print("_", end=" ")
+    print(f'\nA palavra tem {len(palavra)} letras.')
+    print()
     exibir_chutes(palpites)
     print()
 
@@ -92,7 +94,7 @@ def msg_derrota(palavra, asteriscos):
     input('\n\nPressione ENTER para continuar...')
 
 def exibir_chutes(lista):
-    print('\nPalpites até agora:', end=' ')
+    print('Palpites até agora:', end=' ')
     for chute in lista:
         print(f'{chute}', end = ' ')
 
@@ -102,9 +104,9 @@ while chances > 0 and not ganhou:
     limpa_tela()
     saudacao(qtd_asteriscos)
 
-    print(f"\nTentativas restantes:\t{chances}")
     exibir_palavra(palavra_secreta, lista_palpites, dica)
 
+    print(f"\nTentativas restantes:\t{chances}")
     palpite = input(f"Digite uma letra:\t").upper()
     while palpite in lista_palpites:
         palpite = input(f"\nVocê já arriscou a letra '{palpite}'.\nDigite outra letra:\t").upper()
